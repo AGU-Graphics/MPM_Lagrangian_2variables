@@ -544,6 +544,21 @@ void exportVectorDeltaTheta(Eigen::VectorXd V) {
 	data_file.close();
 }
 
+void exportVectorTheta(Eigen::VectorXd V) {
+	std::string output_csv_file_name = "csv/VectorTheta.csv";
+	std::ofstream data_file(output_csv_file_name);
+	// std::cout << "Vector DeltaTheta ‚Ì‘å‚«‚³ : " << V.size() << std::endl;
+
+	// Header
+	for (int i = 0; i < V.size(); i++) {
+		data_file << i + 1 << ",";
+		data_file << V(i) << ",";
+		data_file << std::endl;
+	}
+
+	data_file.close();
+}
+
 void exportNorm(std::vector <double> V) {
 	std::string output_csv_file_name = "csv/Norm.csv";
 	std::ofstream data_file(output_csv_file_name);

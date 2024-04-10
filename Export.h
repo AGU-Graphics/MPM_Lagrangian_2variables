@@ -38,6 +38,8 @@ void exportVectorDeltaPhi(Eigen::VectorXd V);
 
 void exportVectorDeltaTheta(Eigen::VectorXd V);
 
+void exportVectorTheta(Eigen::VectorXd V);
+
 void exportNorm(vector<double> V);
 
 #endif

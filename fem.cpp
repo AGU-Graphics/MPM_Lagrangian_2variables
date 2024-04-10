@@ -60,19 +60,19 @@ void fem(int SimulationTime)
 		calInterpolationAria();
 		// calInterpolationMia(); // 不要になった
 		// new_phi = Newton_Convenient(square); // 都合よく補間量をアレンジした場合
-		// new_phi = Newton_H_onetime(square); // 目的関数Hだけ（1回）
+		 //new_phi = Newton_H_onetime(square); // 目的関数Hだけ（1回）
 
-		new_phi = Newton(square); // 通常
-		// new_phi = Newton_H(square); // 目的関数Hだけ
+		square = Newton(square); // 通常
+		 //new_phi = Newton_H(square); // 目的関数Hだけ
 	}
 	
 	// std::cout << new_phi.size() << std::endl;
 
-	for (int i = 0; i < NumberOfParticles; i++) {
+	/*for (int i = 0; i < NumberOfParticles; i++) {
 		square.points[i].position[0] = new_phi(3 * i);
 		square.points[i].position[1] = new_phi(3 * i + 1);
 		square.points[i].position[2] = new_phi(3 * i + 2);
-	}
+	}*/
 
 	glColor3f(0.5, 0.0, 0.0);
 	drawSquare(square);

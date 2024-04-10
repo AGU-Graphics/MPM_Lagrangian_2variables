@@ -4,7 +4,7 @@
 #include "Square.h"
 #include <Eigen/Dense>
 
-Eigen::VectorXd Newton(Square square);
+Square Newton(Square square);
 Eigen::VectorXd Newton_H_onetime(Square square);
 Eigen::VectorXd Newton_Convenient(Square square);
 Eigen::VectorXd Newton_H(Square square);
@@ -32,9 +32,12 @@ double DifferentialHatFunction(double x); // 数値計算の際に使用
 
 // 区分級数法の数値計算
 double Riemann_Sum_for_Chloe(int i, double h);
-double Riemann_Sum_for_Mary(int i, double h);
+double Riemann_Sum_for_Mary(int i_minus_k, Eigen::VectorXd theta, double h);
+double Riemann_Sum_for_Mary_div(int i_minus_k, Eigen::VectorXd theta, double h,int d);
 double Riemann_Sum_for_Luna(int i, int j, double h);
+double Riemann_Sum_for_Luna(int i_minus_k, int k, Eigen::VectorXd theta, double h);
 double Riemann_Sum_for_Sophia(vector<Eigen::Vector3i> v, vector<int> axis, double h);
+double Riemann_Sum_for_Aria(int i, int j, double h);
 
 #endif
 
